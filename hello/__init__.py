@@ -19,6 +19,10 @@ def create_app():
         # Show the user profile for that user
         return 'User %s' % escape(username)
 
+    @app.route('/greeting?name=<name>')
+    def greet(name):
+        return 'Kia Ora %s' % escape(name)
+
     @app.route('/post/<int:post_id>')
     def show_post(post_id):
         # Show the post with the given id, the id is an integer
