@@ -19,9 +19,9 @@ def create_app():
         # Show the user profile for that user
         return 'User %s' % escape(username)
 
-    @app.route('/greeting?name=<name>')
+    @app.route('/greeting<name>')
     def greet(name):
-        return 'Kia Ora %s' % escape(name)
+        return 'Kia Ora %s!' % escape(name[6:])
 
     @app.route('/post/<int:post_id>')
     def show_post(post_id):
